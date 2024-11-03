@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentApps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tut.css">
+</head>
+<body>
+    <div class="login-form">
+        <h2>Student Schedule Allotment Application</h2>
+        <h4>Sign in with your credentials</h4>
+        <form id="myForm">
+            <label for="name">Username:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="button" value="Login" onclick="validateForm()">
+            <p id="errorMessage" style="color: red;"></p>
+        </form>
+    </div>
+
+    <script>
+    function validateForm() {
+        var name = document.getElementById("name").value;
+        var password = document.getElementById("password").value;
+        var errorMessage = document.getElementById("errorMessage");
+
+        // Clear any previous error message
+        errorMessage.textContent = "";
+
+        // Username validation
+        if (name === "") {
+            errorMessage.textContent = "Please enter your username.";
+            return false;
+        }
+
+        // Password validation
+        if (password === "" || password.length < 6) {
+            errorMessage.textContent = "Password must be at least 6 characters long.";
+            return false;
+        }
+
+        // If all validations pass, simulate successful login
+        alert("Login successful!");
+        // Redirect to the dashboard (or another page)
+        window.location.href = "dashboard.html";
+    }
+    </script>
+</body>
+</html>
