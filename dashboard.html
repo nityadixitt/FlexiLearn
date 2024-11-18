@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,308 +6,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
-            padding: 75px;
-        }
-        
-        /* Main Box */
-        .box {
-            
-            padding: 20px;
-            
-            text-align: left;
-            box-shadow: 0 5px 10px rgba(141, 196, 221, 0.2);
-            border-radius: 35px;
-            width: 57%; /* Reduced width */
-            margin-left: -120px; 
-            margin-right: -100px;
-            margin-top: 10px;
-            height: 130px;
-            display: flex;
-            flex-direction: column;
-            background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
-
-
-            
-        }
-        
-        h3 {
-            font-size: 1.5em;
-            color: #2F4F4F;
-            margin-bottom: 10px;
-            font-weight: 1000;
-            font-style: var(#ffffff);
-        }
-        p {
-            color: #2F4F4F;
-            margin-top: 2px;
-            font-weight: 570; 
-        }
-          #current-date {
-            font-size: 0.8em;
-            color: #2c3e50;
-            margin-top: auto;
-            margin-bottom: 0;
-          }
-          
-    
-        .vertical-box {
-            background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
-
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 250px;
-            height: 100vh;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            padding-top: 20px;
-            overflow-y: auto;
-            flex-direction: column;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-        }
-        .profile-pic {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
-        .vertical-box ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .vertical-box ul li {
-            margin-bottom: 25px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        
-        .vertical-box ul li a {
-            text-decoration: none;
-            color: #2F4F4F;
-            font-size: 1em;
-        }
-        
-        /* Right Sidebar */
-        .right-vertical-box {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 260px;
-            height: 100vh;
-            background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
-
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            padding-top: 20px;
-            overflow-y: auto;
-            flex-direction: column;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            border-radius: 35px;
-        }
-        .profile{
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .right-vertical-box h4{
-            font-size: 1.0em;
-            color: #2F4F4F;
-            margin-top: 10px;
-        }
-        .right-vertical-box p{
-            color: #2F4F4F;
-        }
-        .right-vertical-box button{
-            font-size: 1.0em;
-             padding: 0.5em 1em;
-
-  
-             border-radius: 0.8em;
-
-  
-             background-color:  #233f3f; /* Green background */
-              color: #ffffff; /* White text */
-              border: none;
-
-  
-              transition: background-color 0.3s;
-        }
-        .right-vertical-box button:hover {
-            background-color: #1e3235; /* Darker green on hover */
-          }
-          
-
-          .inner-box{
-            text-align: left;
-            
-            width: 260px;
-            height: 60vh;
-            
-            margin-left: 30px;
-          }
-          .inner-box h5{
-            margin-top: 50px;
-            font-size: 1.0em;
-            color: #2F4F4F;
-             margin-left: 20px;
-          }
-          
-        /* Search Bar Container */
-        .search-container {
-            position: absolute;
-            top: 10px;
-            left: 300px;
-        }
-        
-        /* Search Bar */
-        .search-bar {
-            padding: 10px;
-            font-size: 16px;
-            width: 315%;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            
-        }
-        
-        .search-bar:focus {
-            outline: none;
-            border-color: #2F4F4F;
-        }
-           
-    </style>
 </head>
 <body>
+    <!-- Main Content Box -->
     <div class="box">
         <h3>Hi! Welcome back, John</h3>
         <p>Your learning journey awaits!</p>
-        
-            <span id="current-date"></span>
-        </div>
-    
+        <span id="current-date"></span>
+    </div>
 
-        <!-- Vertical Box for Navigation and Image -->
-        <div class="vertical-box">
-            <img src="vector-reading-icon.jpg" alt="Profile Picture" class="profile-pic">
-            <ul>
-                <li><a href="#" id="courseReg">Course Registration</a></li>
-                <li><a href="#" id="fac">Faculties</a></li>
-                <li><a href="#" id="slotbooking">Slot Booking</a></li>
-                <li><a href="#" id="viewschedule">View schedule</a></li>
-                <li><a href="#" id="attendance">Attendance</a></li>
-                <li><a href="#" id="res">Result</a></li>
-                <li><a href="#" id="dropsem">Drop semester</a></li>
-            </ul>
-        </div>
+    <!-- Left Vertical Box for Navigation -->
+    <div class="vertical-box">
+        <img src="vector-reading-icon.jpg" alt="Profile Picture" class="profile-pic">
+        <ul>
+            <li><a href="#" id="courseReg">Course Registration</a></li>
+            <li><a href="#" id="fac">Faculties</a></li>
+            <li><a href="#" id="slotbooking">Slot Booking</a></li>
+            <li><a href="#" id="viewschedule">View Schedule</a></li>
+            <li><a href="#" id="attendance">Attendance</a></li>
+            <li><a href="#" id="res">Result</a></li>
+            <li><a href="#" id="dropsem">Drop Semester</a></li>
+        </ul>
+    </div>
 
-        <div class="right-vertical-box">
-            <img src="65870.jpg" alt="profile pic" class="profile">
-            <h4>Nitya Dixit</h4>
-            <button>Profile</button>
-           
-            <div class="inner-box">
-                <h5>Your mentors: </h5>
-            </div>
-        </div>
-
-        <!-- Search Bar -->
-        <div class="search-container">
-            <input type="text" placeholder="Search..." class="search-bar">
+    <!-- Right Vertical Box -->
+    <div class="right-vertical-box">
+        <img src="65870.jpg" alt="Profile Pic" class="profile">
+        <h4>Nitya Dixit</h4>
+        <button>Profile</button>
+        <div class="inner-box">
+            <h5>Your mentors:</h5>
         </div>
     </div>
-    
+
+    <!-- Middle Analytics Boxes -->
+    <div class="analytics-container">
+        <div class="analytics-box">
+            <h4>Attendance Overview</h4>
+            <p>Check your attendance in different subjects.</p>
+        </div>
+        <div class="analytics-box">
+            <h4>Performance Summary</h4>
+            <p>View your progress and results overview.</p>
+        </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" placeholder="Search..." class="search-bar">
+    </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            const courseRegLink = document.getElementById('courseReg');
-            courseRegLink.addEventListener('click', function(event) {
-                event.preventDefault();  // Prevent the default link behavior
-        
-                // Redirect to the course registration page
-                window.location.href = 'coursereg.html';
-            });
-            const facLink = document.getElementById('fac');
-            facLink.addEventListener('click', function(event) {
-                event.preventDefault();  // Prevent the default link behavior
-        
-                // Redirect to the course registration page
-                window.location.href = 'Faculties.html';
-            });
-            const slotbookingLink = document.getElementById('slotbooking');
-            slotbookingLink.addEventListener('click', function(event) {
-                event.preventDefault();  // Prevent the default link behavior
-        
-                // Redirect to the course registration page
-                window.location.href = 'Slot-Booking.html';
-            });
-            const viewscheduleLink = document.getElementById('viewschedule');
-            viewscheduleLink.addEventListener('click', function(event) {
-                event.preventDefault();  // Prevent the default link behavior
-        
-                // Redirect to the course registration page
-                window.location.href = 'Schedule.html';
-            });
-            const attendanceLink = document.getElementById('attendance');
-            attendanceLink.addEventListener('click', function(event) {
-                event.preventDefault();  // Prevent the default link behavior
-        
-                // Redirect to the course registration page
-                window.location.href = 'Attendance.html';
-            });
-            const resLink = document.getElementById('res');
-            resLink.addEventListener('click', function(event) {
-                event.preventDefault();  // Prevent the default link behavior
-        
-                // Redirect to the course registration page
-                window.location.href = 'Results.html';
-            });
-            const dropsemLink = document.getElementById('dropsem');
-            dropsemLink.addEventListener('click', function(event) {
-                event.preventDefault();  // Prevent the default link behavior
-        
-                // Redirect to the course registration page
-                window.location.href = 'Drop semester.html';
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = {
+                courseReg: 'coursereg.html',
+                fac: 'Faculties.html',
+                slotbooking: 'Slot-Booking.html',
+                viewschedule: 'Schedule.html',
+                attendance: 'Attendance.html',
+                res: 'Results.html',
+                dropsem: 'Drop semester.html'
+            };
 
+            for (let id in links) {
+                document.getElementById(id).addEventListener('click', function(event) {
+                    event.preventDefault();
+                    window.location.href = links[id];
+                });
+            }
+        });
 
-            });
-            
-    });
-    window.onload = function() {
-        displayDate();
-        setInterval(checkDateChange, 1000 * 60); // Check every minute
-      };
-      
-      function displayDate() {
-        const dateElement = document.getElementById('current-date');
-        
-        const today = new Date();
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        const formattedDate = today.toLocaleDateString('en-US', options);
-        
-        dateElement.textContent = formattedDate;
-      }
-      
-      function checkDateChange() {
-        const currentDate = new Date().toDateString();
-        const displayedDate = document.getElementById('current-date').textContent;
-      
-        if (new Date(displayedDate).toDateString() !== currentDate) {
-          displayDate();
+        window.onload = function() {
+            displayDate();
+            setInterval(checkDateChange, 1000 * 60);
+        };
+
+        function displayDate() {
+            const dateElement = document.getElementById('current-date');
+            const today = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = today.toLocaleDateString('en-US', options);
+            dateElement.textContent = formattedDate;
         }
-      }
-      
+
+        function checkDateChange() {
+            const currentDate = new Date().toDateString();
+            const displayedDate = document.getElementById('current-date').textContent;
+            if (new Date(displayedDate).toDateString() !== currentDate) {
+                displayDate();
+            }
+        }
     </script>
 </body>
 </html>
+
