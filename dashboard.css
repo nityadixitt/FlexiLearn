@@ -206,4 +206,35 @@ p {
 
 
 
+/* Analytics Boxes */
+.analytics-container {
+    position: absolute;
+    bottom: 220px; /* Give a gap from the bottom */
+    left: 50%; /* Center the container horizontally */
+    transform: translateX(-50%); /* Adjust for perfect centering */
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Add gap between the boxes */
+    width: 60%; /* Adjust width as needed */
+    padding-bottom: 20px;
+}
+
+.analytics-box {
+    background-color: #748d92;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+    color: #2F4F4F;
+}
+
+.analytics-box h4 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.analytics-box p {
+    font-size: 1em;
+}
 
