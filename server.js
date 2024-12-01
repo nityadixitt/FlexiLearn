@@ -6,7 +6,57 @@ const dotenv = require("dotenv");
 dotenv.config(); // Load environment variables from .env file
 
 const app = express();
+  const userSchema=new mongoose.Schema({
+    username: {
+      type: String,
+      required: true,
+      unique: true, 
+      match: /^[A-Za-z0-9]{6,10}$/, 
+  },
+  password: {
+      type: String,
+      required: [true, "Password is required"],
+      minlength: 8 
+  },
+  })
+  const User = mongoose.model("User", userSchema);
+  module.exports = { User };
+  
+app.use(express.static("public"));
 
+// Route to serve the login page
+app.get("/login", (req, res) => {
+    res.sendFile(__dirname + "/public/8.html");
+});
+app.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+
+  // Simulating a login process with hardcoded data
+  const mockUser = {
+      username: "ADT23SOCB0657",
+      password: "password123"
+  };
+
+  
+  try {
+    const user = await User.findOne({ username });
+
+    if (!user) {
+      return res.status(400).send("Invalid username");
+    }
+
+    // Simulate password verification (this would ideally use a hash comparison)
+    if (user.password !== password) {
+      return res.status(400).send("Invalid password");
+    }
+
+    return res.send("Login successful");
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal server error");
+  }
+});
 const githubData= {
   "login": "nityadixitt",
   "id": 186256656,
@@ -42,6 +92,7 @@ const githubData= {
   "created_at": "2024-10-25T05:06:08Z",
   "updated_at": "2024-10-25T05:07:14Z"
 }
+
 
 
 

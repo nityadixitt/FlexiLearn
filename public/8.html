@@ -19,11 +19,17 @@
             <input type="password" id="password" name="password" required>
 
             <input type="button" value="Login" onclick="validateForm()">
-            <p id="errorMessage" ></p>style="color: red;"></p>
+            <p id="errorMessage" style="color: red;"></p>
         </form>
     </div>
 
     <script>
+    // Hardcoded credentials
+    const mockUser = {
+        username: "ADT23SOCB0657",
+        password: "password123"
+    };
+
     function validateForm() {
         var name = document.getElementById("name").value;
         var password = document.getElementById("password").value;
@@ -44,10 +50,17 @@
             return false;
         }
 
-        // If all validations pass, simulate successful login
-        alert("Login successful!");
-        // Redirect to the dashboard (or another page)
-        window.location.href = "dashboard.html";
+        // Check if entered username and password match the hardcoded data
+        if (name === mockUser.username && password === mockUser.password) {
+            // If credentials match, simulate successful login
+            alert("Login successful!");
+            // Redirect to the dashboard (or another page)
+            window.location.href = "dashboard.html";
+        } else {
+            // If credentials don't match, show an error message
+            errorMessage.textContent = "Invalid username or password.";
+            return false;
+        }
     }
     </script>
 </body>
